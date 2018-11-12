@@ -1,34 +1,27 @@
 class MainCharacter {
-  constructor(context, canvas) {
-    this.width = 12;
-    this.height = 36;
+  constructor(context) {
+    this.width = 10;
+    this.height = 30;
 
     this.position = {
       x : 0,
       y : 0
     }
 
-    this.context = context;
-    this.canvas = canvas;
-
+    this.render(context)
     this.initializeControls();
   }
 
   
-  render() {
-    this.context.fillStyle = 'rgb(132, 251, 119)';
+  render(context) {
+    context.fillStyle = 'rgb(132, 251, 119)';
 
-    this.context.strokeStyle = 'rgba(132, 251, 119, 0.3)';
-    this.context.lineWidth = 10;
+    context.strokeStyle = 'rgba(132, 251, 119, 0.3)';
+    context.lineWidth = 10;
 
-    this.context.strokeRect(this.position.x, this.position.y, this.width, this.height);
-    this.context.fillRect(this.position.x, this.position.y, this.width, this.height);
+    context.strokeRect(this.position.x, this.position.y, this.width, this.height);
+    context.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
-
-  renderShadow() {
-
-  }
-
   
   initializeControls() {
     document.addEventListener('keydown', (event) => {
@@ -56,29 +49,24 @@ class MainCharacter {
     });
   }
 
-  updatePosition() {
-    this.clearCanvas();
-    this.validateBoundaries();
-    this.context.fillRect(this.position.x, this.position.y, this.width, this.height);
-    this.context.strokeRect(this.position.x, this.position.y, this.width, this.height);
-  }
-
-  clearCanvas() {
-    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+  update(context, canvas) {
+    this.validateBoundaries(canvas);
+    context.fillRect(this.position.x, this.position.y, this.width, this.height);
+    context.strokeRect(this.position.x, this.position.y, this.width, this.height);
   }
 
   validateBoundaries() {
     if (this.position.y < 0) {
       this.position.y = 0;
     }
-    else if (this.position.y >= this.canvas.height) {
-      this.position.y = this.canvas.height - this.height;
+    else if (this.position.y >= canvas.height) {
+      this.position.y = canvas.height - this.height;
     }
     else if (this.position.x < 0) {
       this.position.x = 0;
     }
-    else if (this.position.x >= this.canvas.width) {
-      this.position.x = this.canvas.width - this.width;
+    else if (this.position.x >= canvas.width) {
+      this.position.x = canvas.width - this.width;
     }
   }
 }
