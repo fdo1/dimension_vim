@@ -1,14 +1,16 @@
 class LifeItem {
   constructor(context) {
-    DELTA_X = 5;
-    DELTA_Y = 15;
+    this.DELTA_X = 30;
+    this.update(context)
   }
 
   update(context) {
+    console.log('Life item');
     context.beginPath();
-    context.moveTo(DELTA_X * this.randomNumber(1, 10), 0);
-    context.lineTo(45, 90 );
+    context.moveTo(this.DELTA_X, 0);
+    context.lineTo(45, 90);
     context.lineWidth = 2;
+    context.strokeStyle = '#ff0000';
     context.stroke();
   }
 

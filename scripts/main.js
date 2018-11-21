@@ -5,6 +5,10 @@ let context = canvas.getContext('2d');
 let mainCharacter = new MainCharacter(context);
 let lifeLine = new LifeItem(context);
 
+// Initialize Game Field
+let numberTabs = new NumberTabs();
+
+
 
 function gameLoop(timestamp) {
   clearCanvas();

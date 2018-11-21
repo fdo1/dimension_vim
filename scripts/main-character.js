@@ -12,8 +12,8 @@ class MainCharacter {
     this.initializeControls();
   }
 
-  
   render(context) {
+    context.beginPath();
     context.fillStyle = 'rgb(132, 251, 119)';
 
     context.strokeStyle = 'rgba(132, 251, 119, 0.3)';
@@ -28,22 +28,18 @@ class MainCharacter {
       switch (event.keyCode) {
         case 74:
           this.position.y += this.height;
-          this.updatePosition();
           break;
 
         case 75:
           this.position.y -= this.height;
-          this.updatePosition();
           break;
 
         case 76:
           this.position.x += this.width;
-          this.updatePosition();
           break;
 
         case 72:
           this.position.x -= this.width;
-          this.updatePosition();
           break;
       }
     });
@@ -51,11 +47,10 @@ class MainCharacter {
 
   update(context, canvas) {
     this.validateBoundaries(canvas);
-    context.fillRect(this.position.x, this.position.y, this.width, this.height);
-    context.strokeRect(this.position.x, this.position.y, this.width, this.height);
+    this.render(context)
   }
 
-  validateBoundaries() {
+  validateBoundaries(canvas) {
     if (this.position.y < 0) {
       this.position.y = 0;
     }

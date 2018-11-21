@@ -5,5 +5,16 @@
 canvas {
   background-color: black;
   height: 110vh;
+  margin-left: 30px;
   width: 1500px;
+}
+
+/* Line number tab */
+
+.line-number-tab {
+  background-color: black;
+  border-right: 1px solid gray;
+  height: 100vh;
+  position: absolute;
+  width: 30px;
 }
