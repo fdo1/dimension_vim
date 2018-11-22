@@ -5,9 +5,12 @@ class NumberTabs {
   }
 
   render() {
-    // for(var i = 1; i <= this.lineNumbers; ++i) {
-    //   var $lineItem = $("<p class='line-number'></p>");
-    //   $('.line-number-tab').append($lineItem);
-    // }
+    for(var i = 1; i <= this.lineNumbers; ++i) {
+      var $lineNumberText = $("<p class='line-number'>");
+      $lineNumberText.text(i);
+      var $lineNumberBox = $("<div class='line-number-box'>");
+      $lineNumberBox.append($lineNumberText);
+      $('#line-number-tab').append($lineNumberBox);
+    }
   }
 }

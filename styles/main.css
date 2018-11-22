@@ -9,12 +9,22 @@ canvas {
   width: 1500px;
 }
 
+p {
+  line-height: 32px;
+}
+
 /* Line number tab */
 
-.line-number-tab {
+#line-number-tab {
   background-color: black;
   border-right: 1px solid gray;
   height: 100vh;
   position: absolute;
   width: 30px;
+}
+
+#line-number-tab .line-number {
+  color: white;
+  height: 32px;
+  text-align: center;
 }

@@ -1,7 +1,6 @@
 class LifeItem {
   constructor(context) {
     this.DELTA_X = 30;
-    this.update(context)
   }
 
   update(context) {

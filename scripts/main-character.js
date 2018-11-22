@@ -16,10 +16,10 @@ class MainCharacter {
     context.beginPath();
     context.fillStyle = 'rgb(132, 251, 119)';
 
-    context.strokeStyle = 'rgba(132, 251, 119, 0.3)';
-    context.lineWidth = 10;
+    // context.strokeStyle = 'rgba(132, 251, 119, 0.3)';
+    // context.lineWidth = 10;
 
-    context.strokeRect(this.position.x, this.position.y, this.width, this.height);
+    // context.strokeRect(this.position.x, this.position.y, this.width, this.height);
     context.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
   
