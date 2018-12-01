@@ -7,7 +7,6 @@ class NumberTabs {
     context.font = `${this.Constants.fontSize}pt Calibri`;
     context.fillStyle = "white";
     context.textAlign = "center";
-    context.lineHeight = 15;
     context.textBaseline = 'middle';
     context.fillText("H", this.Constants.tile.width/2, this.Constants.tile.height/2); 
   }

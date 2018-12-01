@@ -1,10 +1,10 @@
 class Constants {
   constructor(){
     this.tile = {
-      width: 20,
-      height: 30
+      width: 40,
+      height: 60
     }
 
-    this.fontSize = 15;
+    this.fontSize = 40;
   }
 }

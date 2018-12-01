@@ -1,7 +1,7 @@
 class MainCharacter {
   constructor(context) {
-    this.width = 20;
-    this.height = 30;
+    this.width = 40;
+    this.height = 60;
 
     this.position = {
       x : 0,
