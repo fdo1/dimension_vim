@@ -3,18 +3,16 @@ let context = canvas.getContext('2d');
 
 // Initialize characters
 let mainCharacter = new MainCharacter(context);
-let lifeLine = new LifeItem(context);
 
 // Initialize Game Field
 let numberTabs = new NumberTabs();
-
 
 
 function gameLoop(timestamp) {
   clearCanvas();
   
   mainCharacter.update(context, canvas);
-  lifeLine.update(context);
+  numberTabs.render(context)
 
   requestAnimationFrame(gameLoop);
 }

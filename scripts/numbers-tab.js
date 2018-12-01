@@ -1,16 +1,14 @@
 class NumberTabs {
   constructor() {
-    this.lineNumbers = 10;
-    this.render()
+    this.Constants = new Constants();
   }
 
-  render() {
-    for(var i = 1; i <= this.lineNumbers; ++i) {
-      var $lineNumberText = $("<p class='line-number'>");
-      $lineNumberText.text(i);
-      var $lineNumberBox = $("<div class='line-number-box'>");
-      $lineNumberBox.append($lineNumberText);
-      $('#line-number-tab').append($lineNumberBox);
-    }
+  render(context) {
+    context.font = `${this.Constants.fontSize}pt Calibri`;
+    context.fillStyle = "white";
+    context.textAlign = "center";
+    context.lineHeight = 15;
+    context.textBaseline = 'middle';
+    context.fillText("H", this.Constants.tile.width/2, this.Constants.tile.height/2); 
   }
 }

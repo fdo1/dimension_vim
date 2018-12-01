@@ -4,9 +4,9 @@
 
 canvas {
   background-color: black;
-  height: 110vh;
-  margin-left: 30px;
-  width: 1500px;
+  border: 1px solid white;
+  height: auto;
+  width: 1440px;
 }
 
 p {
