@@ -6,13 +6,16 @@ let mainCharacter = new MainCharacter(context);
 
 // Initialize Game Field
 let numberTabs = new NumberTabs();
+let codeText = new CodeText();
+let gamefield = new Gamefield();
 
 
 function gameLoop(timestamp) {
   clearCanvas();
   
   mainCharacter.update(context, canvas);
-  numberTabs.render(context)
+  numberTabs.render(context);
+  gamefield.render(context);
 
   requestAnimationFrame(gameLoop);
 }

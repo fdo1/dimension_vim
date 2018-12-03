@@ -1,7 +1,8 @@
 class MainCharacter {
   constructor(context) {
-    this.width = 40;
-    this.height = 60;
+    this.constants = new Constants();
+    this.width = this.constants.tile.width;
+    this.height = this.constants.tile.height;
 
     this.position = {
       x : 0,
@@ -17,7 +18,7 @@ class MainCharacter {
     context.fillStyle = 'rgb(132, 251, 119)';
 
     // context.strokeStyle = 'rgba(132, 251, 119, 0.3)';
-    // context.lineWidth = 10;
+    // context.lineWidth = 20;
 
     // context.strokeRect(this.position.x, this.position.y, this.width, this.height);
     context.fillRect(this.position.x, this.position.y, this.width, this.height);
