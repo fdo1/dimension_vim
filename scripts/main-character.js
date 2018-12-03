@@ -57,8 +57,8 @@ class MainCharacter {
     else if (this.position.y >= canvas.height) {
       this.position.y = canvas.height - this.height;
     }
-    else if (this.position.x < 0) {
-      this.position.x = 0;
+    else if (this.position.x < 40) {
+      this.position.x = 40;
     }
     else if (this.position.x >= canvas.width) {
       this.position.x = canvas.width - this.width;

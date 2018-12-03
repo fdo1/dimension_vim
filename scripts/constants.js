@@ -5,6 +5,7 @@ class Constants {
       height: 60
     }
 
-    this.fontSize = 40;
+    this.fontSize = 30;
+    this.numberFontSize = 20;
   }
 }

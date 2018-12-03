@@ -1,13 +1,19 @@
 class NumberTabs {
   constructor() {
-    this.Constants = new Constants();
+    this.constants = new Constants();
   }
 
   render(context) {
-    context.font = `${this.Constants.fontSize}pt Calibri`;
-    context.fillStyle = "white";
-    context.textAlign = "center";
-    context.textBaseline = 'middle';
-    context.fillText("H", this.Constants.tile.width/2, this.Constants.tile.height/2); 
-  }
+    self = this;
+    var numberOfRows = 10;
+
+    for(var i = 0; i < numberOfRows; ++i) {
+      var position_y = this.constants.tile.height/2 + this.constants.tile.height * i;
+      context.font = `${this.constants.numberFontSize}pt Calibri`;
+      context.fillStyle = "white";
+      context.textAlign = "center";
+      context.textBaseline = 'middle';
+      context.fillText(i+1, this.constants.tile.width/2, position_y); 
+    }
+  } 
 }
