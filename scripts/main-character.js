@@ -8,6 +8,10 @@ class MainCharacter {
       x : 0,
       y : 0
     }
+    this.tileCoordinates = {
+      x: 0,
+      y: 0
+    }
 
     this.render(context)
     this.initializeControls();
@@ -23,24 +27,28 @@ class MainCharacter {
     // context.strokeRect(this.position.x, this.position.y, this.width, this.height);
     context.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
-  
+
   initializeControls() {
     document.addEventListener('keydown', (event) => {
       switch (event.keyCode) {
         case 74:
           this.position.y += this.height;
+          this.tileCoordinates.y += 1;
           break;
 
         case 75:
           this.position.y -= this.height;
+          this.tileCoordinates.y -= 1;
           break;
 
         case 76:
           this.position.x += this.width;
+          this.tileCoordinates.x += 1;
           break;
 
         case 72:
           this.position.x -= this.width;
+          this.tileCoordinates.x -= 1;
           break;
       }
     });
@@ -54,6 +62,7 @@ class MainCharacter {
   validateBoundaries(canvas) {
     if (this.position.y < 0) {
       this.position.y = 0;
+      this.tileCoordinates.y = 0;
     }
     else if (this.position.y >= canvas.height) {
       this.position.y = canvas.height - this.height;
