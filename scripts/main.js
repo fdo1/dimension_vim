@@ -11,7 +11,7 @@ let mainCharacter = new MainCharacter(context, gamefield.getCodeCoordinates());
 function gameLoop(timestamp) {
   clearCanvas();
   
-  mainCharacter.update(context, gamefield.getCodeCoordinates());
+  mainCharacter.render(context);
   gamefield.render(context);
   numberTabs.render(context);
 
