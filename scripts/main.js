@@ -1,21 +1,19 @@
 let canvas = document.getElementById('game-screen');
 let context = canvas.getContext('2d');
 
-// Initialize characters
-let mainCharacter = new MainCharacter(context);
-
 // Initialize Game Field
 let numberTabs = new NumberTabs();
-let codeText = new CodeText();
 let gamefield = new Gamefield();
 
+// Initialize characters
+let mainCharacter = new MainCharacter(context, gamefield.getCodeCoordinates());
 
 function gameLoop(timestamp) {
   clearCanvas();
   
-  mainCharacter.update(context, canvas);
-  numberTabs.render(context);
+  mainCharacter.update(context, gamefield.getCodeCoordinates());
   gamefield.render(context);
+  numberTabs.render(context);
 
   requestAnimationFrame(gameLoop);
 }
