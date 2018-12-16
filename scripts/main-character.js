@@ -1,5 +1,5 @@
 class MainCharacter {
-  constructor(context, gamefieldCoordinates) {
+  constructor(gamefieldCoordinates) {
     this.constants = new Constants();
     this.width = this.constants.tile.width;
     this.height = this.constants.tile.height;
@@ -12,10 +12,6 @@ class MainCharacter {
       y: 0
     }
     this.initializeControls(gamefieldCoordinates);
-  }
-
-  update(context, gamefieldCoordinates) {
-    this.render(context);
   }
 
   render(context) {
@@ -81,8 +77,6 @@ class MainCharacter {
   }
 
   validatePositionInLine(gamefieldCoordinates) {
-    console.log('Last position in row: ', gamefieldCoordinates[this.tileCoordinates.y].length - 1);
-    console.log('Current coordinate in X: ', this.tileCoordinates.x);
     if(this.tileCoordinates.x > gamefieldCoordinates[this.tileCoordinates.y].length - 1) {
       var lastPositionInRow = gamefieldCoordinates[this.tileCoordinates.y].length - 1
       this.position.x = gamefieldCoordinates[this.tileCoordinates.y][lastPositionInRow].x_position;
